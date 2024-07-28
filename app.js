@@ -46,6 +46,11 @@ app.use('/api/reviews',reviewRoute);
 const ratingRoute = require('./Routes/ratingRoutes');
 app.use('/api/ratings',ratingRoute);
 
+// Address Routes 
+const addressRoute = require ('./Routes/addressRoutes')
+app.use('/api/user',addressRoute)
+
+
 // Payment Route
 
 const paymentRoute = require('./Routes/paymentRoutes');

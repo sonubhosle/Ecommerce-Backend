@@ -25,10 +25,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         default: "CUSTOMER"
     },
-    address: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "addresses"
-    }],
+ 
     paymentInformation: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "payment_information"

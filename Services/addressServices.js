@@ -1,5 +1,5 @@
 const Address = require('../Models/addressModel');
-
+const mongoose = require ('mongoose')
 const deleteAddressById = async (id) => {
   try {
     const deletedAddress = await Address.findByIdAndDelete(id);
@@ -24,7 +24,18 @@ const updateAddressById = async (id, addressData) => {
   }
 };
 
+
+const getAddressesByUserId = async (userId) => {
+  try {
+    const addresses = await Address.find({ user: userId }); 
+    return addresses;
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   deleteAddressById,
+  getAddressesByUserId,
   updateAddressById,
 };
